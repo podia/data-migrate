@@ -20,7 +20,7 @@ RSpec.configure do |config|
     if example.metadata[:no_override]
     else
       @prev_data_migrations_path = DataMigrate.config.data_migrations_path
-      if Rails::VERSION::MAJOR == 6
+      if Rails::VERSION::MAJOR >= 6
         DataMigrate.configure do |config|
           config.data_migrations_path = "spec/db/6.0"
         end
